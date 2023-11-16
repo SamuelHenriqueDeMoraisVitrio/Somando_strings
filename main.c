@@ -18,24 +18,24 @@ void somas(char *string1, const char *string2){
     
     *string1 = '\0';
 
-    size_t primeirosCaracterSemEspaco = strcspn(*string1, " ");
+    size_t primeirosCaracterSemEspaco = strcspn(string1, " ");
 
-    do{
-        string1 = 0;
-    }while(*string1 != '\0'){
-        if(*string1 != ''){
+    string1 = 0;
+    short numSemEspacos = 0;
+    short numComEspacos = 0;
+
+    while(*string1 != '\0'){
+
+        if(*string1 != ' '){
             numComEspacos++;
         }else{
             numSemEspacos++;
-        }
-        
+        } 
     }
 }
 
 int main(){
 
-    short numSemEspacos;
-    short numComEspacos;
 
     char st1[61];
     printf("Escreva uma frase\n\n");
