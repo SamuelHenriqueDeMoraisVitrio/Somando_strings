@@ -4,7 +4,7 @@
 
 //criei função com 2 ponteiros para as strings que irei utilizar
 void somas(char *string1, const char *string2){
-
+    const char *inicioString = string1;
 
     while(*string1 != '\0'){
         string1++;
@@ -17,10 +17,10 @@ void somas(char *string1, const char *string2){
     }
     
     *string1 = '\0';
-
+    /*
     size_t primeirosCaracterSemEspaco = strcspn(string1, " ");
 
-    string1 = 0;
+    string1 = inicioString;
     short numSemEspacos = 0;
     short numComEspacos = 0;
 
@@ -32,17 +32,21 @@ void somas(char *string1, const char *string2){
             numSemEspacos++;
         } 
     }
+    */
 }
 
 int main(){
 
-
-    char st1[61];
+    char fraseFinal[500] = "Fim";
+    char st1[90];
     printf("Escreva uma frase\n\n");
 
     fgets(st1, sizeof(st1), stdin);
 
+    somas(st1, fraseFinal);
 
+    printf("%s\n", st1);
     //system("cls");
     //printf("\nSua frase foi '%s' \nCom %d caracters e %d tirando os espaços e com %d caracters antes do primeiro espaço.\n");
+    return 0;
 }
