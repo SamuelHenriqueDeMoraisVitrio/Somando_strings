@@ -14,10 +14,7 @@ int soma(char *st1, const char *st2){
         st2++;
     }
     
-    short comprimento = st1;
     *st1 = '\0';
-    
-    return comprimento;
 }
 
 int main(){
@@ -32,8 +29,8 @@ int main(){
     fgets(palavraR, sizeof(palavraR), stdin);
     palavraR[strcspn(palavraR,  "\n")] = '\0';
     printf(" \n%s\n\n", palavraR);
-    int comp = soma(palavraR, fim);
+    soma(palavraR, fim);
     
-    printf("\n %d\n\n", comp);
+    printf("\n %s\n\n", palavraR);
     //printf("\nSua frase foi '%s' \nCom %d caracters e %d tirando os espaços e com %d caracters antes do primeiro espaço.\n");
 }
