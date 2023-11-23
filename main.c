@@ -1,59 +1,19 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-
-//criei função com 2 ponteiros para as strings que irei utilizar
-/*
-void somas(char *string1, const char *string2){
-    const char *inicioString = string1;
-
-    while(*string1 != '\0'){
-        string1++;
-    }
-
-    while (*string2 != '\0'){
-        *string1 = *string2;
-        string1++;
-        string2++;
-    }
-    
-    *string1 = '\0';
-    
-    size_t primeirosCaracterSemEspaco = strcspn(string1, " ");
-
-    string1 = inicioString;
-    short numSemEspacos = 0;
-    short numComEspacos = 0;
-
-    while(*string1 != '\0'){
-
-        if(*string1 != ' '){
-            numComEspacos++;
-        }else{
-            numSemEspacos++;
-        } 
-    }
-}
-    */
 
 int main(){
+    char palavraR[51];
+    const char fim[] = " mundo";
+    
+    printf("**********************************************");
+    printf("\nescreva uma palavra com no max 50 caracters.\n");
+    printf("**********************************************\n\n");
+    
+    fgets(palavraR, sizeof(palavraR), stdin);
+    palavraR[strcspn(palavraR,  "\n")] = '\0';
 
-    const char fraseFinal[] = " Fim";
-    const char fraseIni[] = "ola";
-    char st1[90];
-    printf("\nEscreva uma frase\n\n");
+    strcat(palavraR, fim);
+    size_t tamanho = strlen(palavraR);
 
-    fgets(st1, sizeof(st1), stdin);
-    /*
-    somas(st1, fraseFinal);
-    */
-    printf(" %s\n\n", st1);
-    st1[strcspn(st1, "\n")] = '\0';
-
-    strcat(st1, fraseFinal);
-
-    printf(" %s\n\n", st1);
-    //system("cls");
-    //printf("\nSua frase foi '%s' \nCom %d caracters e %d tirando os espaços e com %d caracters antes do primeiro espaço.\n");
-    return 0;
+    printf("\nSua frase foi '%s'.\nCom %zu caracters.\n\n", palavraR, tamanho);
 }
