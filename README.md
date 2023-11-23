@@ -1,3 +1,4 @@
+```
 <style>
     header{
         text-aligner: center;
@@ -25,3 +26,4 @@
     O cod tem 2 ramificações sendo uma focada em funções da stringh e a outra focada em substituir estas funções por ponteiros basicamente.
 </p>
 </main>
+/```
